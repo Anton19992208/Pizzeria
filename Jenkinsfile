@@ -9,7 +9,7 @@ pipeline {
 
 		stage('Build'){
 			steps {
-			       dir('pizza-service') {
+			       dir('mssc-pizza-service') {
                                sh "pwd"
                              }
 				sh 'mvn clean install -DskipTests'
