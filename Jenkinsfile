@@ -11,8 +11,9 @@ pipeline {
 			steps {
 			       dir('mssc-pizza-service') {
                                sh "pwd"
+			       sh 'mvn clean install -DskipTests'
                              }
-				sh 'mvn clean install -DskipTests'
+				
 			}
 		}
 
