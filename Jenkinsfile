@@ -9,6 +9,9 @@ pipeline {
 
 		stage('Build'){
 			steps {
+			       dir('pizza-service') {
+                               sh "pwd"
+                             }
 				sh 'mvn clean install -DskipTests'
 			}
 		}
