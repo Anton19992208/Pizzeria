@@ -9,7 +9,7 @@ pipeline {
 
 		stage('Build'){
 			steps {
-			       dir('mssc-pizza-inventory') {
+			       dir('mssc-pizza-service') {
                                sh "pwd"
 			       sh 'mvn clean install -DskipTests'
                              }
