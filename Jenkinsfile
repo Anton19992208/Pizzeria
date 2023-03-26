@@ -13,6 +13,10 @@ pipeline {
                                sh "pwd"
 			       sh 'mvn clean install -DskipTests'
                              }
+			       dir('mssc-pizza-inventory') {
+                               sh "pwd"
+			       sh 'mvn clean install -DskipTests'
+                             }
 			     
 				
 			}
