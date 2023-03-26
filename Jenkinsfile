@@ -10,11 +10,12 @@ pipeline {
 		stage('Build'){
 			steps {
 			       dir('mssc-pizza-service') {
-                               sh "pwd"
 			       sh 'mvn clean install -DskipTests'
                              }
 			       dir('mssc-pizza-inventory') {
-                               sh "pwd"
+			       sh 'mvn clean install -DskipTests'
+                             }
+			       dir('mssc-pizza-order') {
 			       sh 'mvn clean install -DskipTests'
                              }
 			     
@@ -25,11 +26,12 @@ pipeline {
 		stage('Test'){
 			steps{
 			       dir('mssc-pizza-service') {
-                               sh "pwd"
 			       sh 'mvn test'
                              }
 			       dir('mssc-pizza-inventory') {
-                               sh "pwd"
+			       sh 'mvn test'
+                             }
+			       dir('mssc-pizza-order') {
 			       sh 'mvn test'
                              }
 			}
@@ -37,12 +39,7 @@ pipeline {
 
 		stage('Deploy') {
 			steps {
-			       dir('mssc-pizza-service') {
-			       sh 'mvn jar:jar deploy:deploy'
-                             }
-			       dir('mssc-pizza-inventory') {
-			       sh 'mvn jar:jar deploy:deploy'
-                             }
+			      echo 'fdkfkfkfkfk'
 			}
 		}
 	}
