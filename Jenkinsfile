@@ -13,14 +13,7 @@ pipeline {
                                sh "pwd"
 			       sh 'mvn clean install -DskipTests'
                              }
-			      dir('mssc-pizza-order') {
-                              sh "pwd"
-			      sh 'mvn clean install -DskipTests'
-			     }
-			     dir('mssc-pizza-service') {
-                              sh "pwd"
-			      sh 'mvn clean install -DskipTests'
-			     }
+			     
 				
 			}
 		}
