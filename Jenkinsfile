@@ -24,7 +24,7 @@ pipeline {
 
 		stage('Test'){
 			steps{
-			     dir('mssc-pizza-service') {
+			       dir('mssc-pizza-service') {
                                sh "pwd"
 			       sh 'mvn test'
                              }
@@ -37,7 +37,12 @@ pipeline {
 
 		stage('Deploy') {
 			steps {
-			    sh 'mvn jar:jar deploy:deploy'
+			       dir('mssc-pizza-service') {
+			       sh 'mvn jar:jar deploy:deploy'
+                             }
+			       dir('mssc-pizza-inventory') {
+			       sh 'mvn jar:jar deploy:deploy'
+                             }
 			}
 		}
 	}
