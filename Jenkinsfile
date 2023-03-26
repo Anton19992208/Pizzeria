@@ -24,7 +24,14 @@ pipeline {
 
 		stage('Test'){
 			steps{
-			     echo 'fkfkfkfkfk'
+			     dir('mssc-pizza-service') {
+                               sh "pwd"
+			       sh 'mvn test'
+                             }
+			       dir('mssc-pizza-inventory') {
+                               sh "pwd"
+			       sh 'mvn test'
+                             }
 			}
 		}
 
