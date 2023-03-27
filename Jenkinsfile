@@ -39,7 +39,16 @@ pipeline {
 
 		stage('Deploy') {
 			steps {
-			      echo 'fdkfkfkfkfk'
+			      dir('mssc-pizza-service') {
+			       sh 'mvn jar:jar deploy:deploy'
+                             }
+			       dir('mssc-pizza-inventory') {
+			       sh 'mvn jar:jar deploy:deploy'
+                             }
+		               dir('mssc-pizza-order') {
+                               sh "pwd"
+			       sh 'mvn clean install -DskipTests'
+                             }
 			}
 		}
 	}
